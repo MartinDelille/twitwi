@@ -18,3 +18,6 @@ l:
 	gdformat *.gd
 	gdlint *.gd
 	clang-format -i *.gdshader
+
+w:
+	gh run watch
