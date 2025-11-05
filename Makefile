@@ -20,4 +20,4 @@ l:
 	clang-format -i *.gdshader
 
 w:
-	gh run watch
+	gh run watch; say "Done"
