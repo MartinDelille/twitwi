@@ -2,6 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dmcab1ht3u0cv" path="res://twingo.blend" id="1_ig7tw"]
 
-[node name="Node3D" type="Node3D" unique_id=841591027]
+[node name="Node3D" type="Node3D"]
 
-[node name="twingo" parent="." unique_id=1594742620 instance=ExtResource("1_ig7tw")]
+[node name="twingo" parent="." instance=ExtResource("1_ig7tw")]
