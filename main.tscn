@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpd0ht8yhff7y"]
+[gd_scene load_steps=3 format=3 uid="uid://dpd0ht8yhff7y"]
 
-[ext_resource type="PackedScene" uid="uid://dmcab1ht3u0cv" path="res://twingo.blend" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dk26m7tc0pqib" path="res://models/twingo.blend" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://ctet4dsun05t1" path="res://models/wheel.blend" id="2_h2yge"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="twingo" parent="." instance=ExtResource("1_ig7tw")]
+[node name="VehicleBody3D" type="VehicleBody3D" parent="."]
+
+[node name="twingo" parent="VehicleBody3D" instance=ExtResource("1_0xm2m")]
+
+[node name="wheel" parent="VehicleBody3D" instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61602056, 0, 0.9874306)
