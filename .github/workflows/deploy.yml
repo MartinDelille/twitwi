@@ -36,10 +36,13 @@ jobs:
           path: /usr/local/blender-${{ env.BLENDER_VERSION }}
           key: blender-${{ env.BLENDER_VERSION }}-cache
 
+      - name: Set Blender major version
+        run: echo "BLENDER_MAJOR_VERSION=$(echo ${{ env.BLENDER_VERSION }} | cut -d. -f1,2)" >> $GITHUB_ENV
+
       - name: Install Blender
         if: steps.cache-blender.outputs.cache-hit != 'true'
         run: |
-          wget https://download.blender.org/release/Blender4.3/blender-${{ env.BLENDER_VERSION }}-linux-x64.tar.xz
+          wget https://download.blender.org/release/Blender${{ env.BLENDER_MAJOR_VERSION }}/blender-${{ env.BLENDER_VERSION }}-linux-x64.tar.xz
           tar -xvf blender-${{ env.BLENDER_VERSION }}-linux-x64.tar.xz
           sudo mv blender-${{ env.BLENDER_VERSION }}-linux-x64 /usr/local/blender-${{ env.BLENDER_VERSION }}
           sudo ln -s /usr/local/blender-${{ env.BLENDER_VERSION }}/blender /usr/local/bin/blender
