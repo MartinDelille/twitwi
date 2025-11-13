@@ -3,6 +3,7 @@ name: Deploy Godot project to GitHub Pages and Itch.io
 on:
   push:
     branches: ["**"]
+    tags: ["**"]
 
   workflow_dispatch:
 
