@@ -75,6 +75,7 @@ jobs:
           path: build/windows/
 
       - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/')
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -86,6 +87,7 @@ jobs:
           prerelease: false
 
       - name: Upload Release Asset (HTML)
+        if: startsWith(github.ref, 'refs/tags/')
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -96,6 +98,7 @@ jobs:
           asset_content_type: text/html
 
       - name: Upload Release Asset (Windows)
+        if: startsWith(github.ref, 'refs/tags/')
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
